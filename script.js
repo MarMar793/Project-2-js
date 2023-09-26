@@ -1,16 +1,14 @@
-body {
-height:100%;
-background-image:url(numberimage.gif);
-  
-}
-h1{
-font-size:4w;
-  background-color:black;
-  color:white;
-  text-align:center;
-}
-.numberContainer{
-align-content:center;
-  mask-size:4vw;
-  padding-inline-end:4%;
-}
+/* The below registeres a score each time the user clicks */
+const clickButton = document.getElementById("clickButton");
+        const scoreElement = document.getElementById("score");
+
+        /* Start with a score of 0*/
+        let score = 0;
+
+        /*Code to register when the user has clicked button & increase with each click*/
+        clickButton.addEventListener("click", () => {
+            score++;
+            
+            /*show score on page*/
+            scoreElement.textContent = score;
+        });
