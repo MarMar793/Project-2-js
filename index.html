@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<div> <title>Guess My Number</title></div>
-<link rel="stylesheet" href="style.css">
+   <title>Guess My Number</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-<h1>Guess My Number</h1>
-<p>Pick a number between 1 and 12 to make your guess:</p>
+    <h1>Guess My Number</h1>
+    <p>Pick a number between 1 and 12 to make your guess:</p>
 
-/*Numbers position on page.Number container function in JS.*/
-<div id="numberContainer">
-</div>
+    <div id="numberContainer">
+        <!-- Numbers 1 to 10 will be added here dynamically -->
+    </div>
 
-/*Attempts message*/
-<p id="attemptsRemaining">Attempts </p>
-<p id="message"></p>
+   <p id="attemptsRemaining">Attempts Remaining: 4</p>
+   
+    <p id="message"></p>
+    <div class="resetContainer">
+        <!-- Number buttons and reset button go here -->
+        <!-- Number buttons code ... -->
 
-  /*reset button/section*/
-<div class="resetContainer">
+        <button id="resetButton" class="reset-button">Reset Game</button>
+    </div>
 
 
-
-<button id="resetButton" class="reset-button">Reset Game</button>
-</div>
-
+    <script src="script.js"></script> 
+</body>
+</html>
 
 
 /* link to js*/
