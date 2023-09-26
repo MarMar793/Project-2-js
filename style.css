@@ -4,6 +4,11 @@ background-image:url(numberimage.gif);
 
 }
 h1{
+  color: blue
+  border:box;
+  align:center;
+}
+p{
 font-size:4w;
   background-color:black;
   color:white;
