@@ -6,7 +6,6 @@ background-color: black;
 /* changing colour background for title*/
 h1{
 font-size: 7vw;
-text-shadow: blanchedalmond;
 background: linear-gradient(to bottom,orange 4%, yellow 7%,red,green); /*code taken from W3C*/
 background-clip: text;
 /*setting background to text */
