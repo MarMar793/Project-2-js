@@ -14,8 +14,6 @@ function generateRandomNumber() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
-/* added classlist so I can style the buttons in css*/
-numberButton.classList.add("number-button");
 
 /*added else if to display message depening on users guess*/
 function handleGuess(userGuess) {
@@ -38,6 +36,12 @@ function createNumberButtons() {
     for (let i = 1; i <= 10; i++) {
         const numberButton = document.createElement("button");
         numberButton.textContent = i;
+
+       /* classlist to style in css*/
+numberButton.classList.add("number-button");
+        
+        /* space button out with formula. Formula found on geeksforgeeks.com*/
+        const marginRight = `calc((100% - (${n} * ${buttonWidth}px)) / (${n - 1}))`;
 
         /*Registers users guess*/
         numberButton.addEventListener("click", () => {
