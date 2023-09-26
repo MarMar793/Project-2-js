@@ -1,29 +1,70 @@
 body {
 height:100%;
-background-image:url(numberimage.gif);
-
+background-color: black;
 }
 
-div{
-  background-color:black;
-  align-content:center;
-   border-radius: inherit;
-  border-color:white;
-}
-
+/* changing colour background for title*/
 h1{
-  color: blue
-  border:box;
-  align:center;
+font-size: 7vw;
+text-shadow: blanchedalmond;
+background: linear-gradient(to bottom,orange 4%, yellow 7%,red,green); /*code taken from W3C*/
+background-clip: text;
+/*setting background to text */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align: center;
 }
-p{
-font-size:4w;
-  background-color:black;
-  color:white;
-  text-align:center;
+
+
+p {
+font-size: 4vw;
+background-color: black;
+color: white;
+text-align: center;
 }
-.numberContainer{
-align-content:center;
-  mask-size:4vw;
-  padding-inline-end:4%;
+
+
+.number-button {
+background-color: chartreuse; /* Background color */
+color: rgb(196, 58, 3); /* Text color */
+font-size: 100%; /* Font size-relative */
+padding: 2% 3%; /* Padding */
+margin: 0.75%; /* Margin */
+border: none;
+text-align: center;
+}
+
+
+/* Hover effect */
+.number-button:hover {
+background-color: rgb(239, 156, 0); 
+color:white;
+}
+.number-container {
+display: flex;
+justify-content: center; /* Center-align the buttons horizontally */
+margin: 0 auto; /* Center horizontally in the viewport */
+width: 100%; /* Ensure the container takes the full width */
+}
+.reset-button {
+background-color: chartreuse; /* Background color */
+color:rgb(239, 156, 0); /* Text color */
+font-size: 100%; /* Font size-relative */
+padding: 2% 3%; 
+border: none;
+display: flex;
+justify-content: center; /* Center-align the buttons horizontally */
+align-items: center;
+}
+
+
+/* Hover effect */
+.reset-button:hover {
+background-color: rgb(196, 58, 3) ; /* Background color on hover */
+color:white;
+}
+.resetContainer {
+display: flex;
+justify-content: center; /* Center-align the button horizontally */
+align-items: center; /* Center-align the button vertically */
 }
