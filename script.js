@@ -55,10 +55,19 @@ function disableNumbers() {
 
 /*This resets the game*/
 function resetGame() {
-    randomNumber = generateRandomNumber(); // Generate a new random number
-    messageElement.textContent = ""; // Clear the message
-    attempts = 0; // Reset the number of attempts
-    enableNumbers(); // Enable number buttons
+    randomNumber = generateRandomNumber(); 
+    messageElement.textContent = ""; 
+    attempts = 0;
+    enableNumbers();
+      resetButton.disabled = true; /*added a disabled condition for the reset button when the game is in play*/
+}
+
+/* Enable function buttons*/
+function enableNumbers() {
+    const numberButtons = document.querySelectorAll("#numberContainer button");
+    numberButtons.forEach((button) => {
+        button.disabled = false;
+    });
 }
 
 /*Add reset button*/
@@ -68,4 +77,4 @@ resetButton.addEventListener("click", () => {
 
 /*Recreate numbers. Start game again*/
 createNumberButtons();
-resetGame(); // Initialize the game
+resetGame(); // 
