@@ -1,59 +1,74 @@
-/*Generate a random number between 1 and 10*/
-let randomNumber = generateRandomNumber();
-let remainingAttempts = 4;/*gives the user 4 attempts*/
+/*number of attempts*/
+let remainingAttempts = 4; 
+/*Log randomly chosen number (winning number)*/
+let randomNumber; 
 
-/*Connects to HTML */
+/*get from HTML*/
+const attemptsElement = document.getElementById("attemptsRemaining");
 const numberContainer = document.getElementById("numberContainer");
 const messageElement = document.getElementById("message");
 const resetButton = document.getElementById("resetButton");
 
-/*start with 0 attempts made*/
+/*start with 0 attempts made by user*/
 let attempts = 0;
 
-/*Code generates a random number between 1 and 10*/
+/* generate a number randomly between 1-12*/
 function generateRandomNumber() {
-    return Math.floor(Math.random() * 10) + 1;
+    return Math.floor(Math.random() * 12) + 1; // Generates a random number between 1 and 12
+}
+/*no. of attempts remaining to be displayed*/
+function updateAttemptsDisplay() {
+    attemptsElement.textContent = `You have ${remainingAttempts} attempts remaining`;
 }
 
-
-/*added else if to display message depening on users guess*/
+/* What should be displayed depending on if the user chose correctly or not*/
 function handleGuess(userGuess) {
     if (userGuess === randomNumber) {
-        messageElement.textContent = `Winner winner chicken dinner! The right answer was ${randomNumber}. You guessed it in ${attempts} attempts.`;
-        disableNumbers(); 
-        resetButton.disabled = false; 
+        
+        /*check if the user had 1 guess left when they chose the correct random numnber*/
+        if (remainingAttempts === 1) {
+            messageElement.textContent = `Winner! The correct number was ${randomNumber}. You got it on the last attempt!`;
+        } else {
+            messageElement.textContent = `Winner! The correct number was ${randomNumber}. It took you ${attempts} attempts.`;
+        }
+        disableNumbers(); /* disable numbers if they guessed correctly*/
+        resetButton.disabled = false;
     } else if (userGuess < randomNumber) {
-        messageElement.textContent = "Too low. Try again!";
+        messageElement.textContent = "Too low! Try again.";
     } else if (userGuess > randomNumber) {
-        messageElement.textContent = "Too high. Try again!";
+        messageElement.textContent = "Too high! Try again.";
     }
 
-    /*adds number of attempts*/
+    /* log number of guesses made*/
     attempts++;
-}
-
-    /*logs remaining attempts*/
+    /*log number of guesses left*/
     remainingAttempts--;
 
-    if (remainingAttempts === 0) {
-        disableNumbers(); /* takes away more guesses*/
-        messageElement.textContent = "You lose sucker!";
+    updateAttemptsDisplay(); /* Update and display remaining attempts*/
+
+    if (remainingAttempts === 0 && userGuess !== randomNumber) {
+        disableNumbers();
+        messageElement.textContent = `Out of attempts. Game over. The number was ${randomNumber}.`; /* tell user they lose if they don't guess the correct number */
         resetButton.disabled = false;
     }
 }
 
+/*conditions in which to disable numbers*/
+function disableNumbers() {
+    const numberButtons = document.querySelectorAll(".number-button");
+    numberButtons.forEach((button) => {
+        button.disabled = true;
+    });
 
-/*create numbers with html*/
+    
+/*create number buttons*/
 function createNumberButtons() {
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 12; i++) { // number range is 1-12
         const numberButton = document.createElement("button");
         numberButton.textContent = i;
+        numberButton.classList.add("number-button");
 
-       /* classlist to style in css*/
-numberButton.classList.add("number-button");
-    
-
-        /*Registers users guess*/
+        /*each "click" on a number is a guess. log guess*/
         numberButton.addEventListener("click", () => {
             const userGuess = parseInt(numberButton.textContent);
             handleGuess(userGuess);
@@ -62,37 +77,28 @@ numberButton.classList.add("number-button");
     }
 }
 
-/*disable buttons when user guesses correct*/
-function disableNumbers() {
-    const numberButtons = document.querySelectorAll("#numberContainer button");
-    numberButtons.forEach((button) => {
-        button.disabled = true;
-    });
-}
 
-/*This resets the game*/
+/*reset game*/
 function resetGame() {
-    randomNumber = generateRandomNumber(); 
-    messageElement.textContent = ""; 
+    randomNumber = generateRandomNumber();
+    messageElement.textContent = "";
     attempts = 0;
     enableNumbers();
-      resetButton.disabled = true; /*added a disabled condition for the reset button when the game is in play*/
-     remainingAttempts = 4; /*puts guesses back to 4*/
+    resetButton.disabled = true;
+    remainingAttempts = 4; // Reset attempts
+    updateAttemptsDisplay(); // Update and display remaining attempts
 }
 
-/* Enable function buttons*/
+
+
 function enableNumbers() {
-    const numberButtons = document.querySelectorAll("#numberContainer button");
+    const numberButtons = document.querySelectorAll(".number-button");
     numberButtons.forEach((button) => {
         button.disabled = false;
     });
 }
 
-/*Add reset button*/
-resetButton.addEventListener("click", () => {
-    resetGame();
-});
+resetButton.addEventListener("click", resetGame);
 
-/*Recreate numbers. Start game again*/
 createNumberButtons();
-resetGame(); // 
+resetGame();
