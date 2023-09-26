@@ -1,5 +1,6 @@
 /*Generate a random number between 1 and 10*/
 let randomNumber = generateRandomNumber();
+let remainingAttempts = 4;/*gives the user 4 attempts*/
 
 /*Connects to HTML */
 const numberContainer = document.getElementById("numberContainer");
@@ -19,8 +20,8 @@ function generateRandomNumber() {
 function handleGuess(userGuess) {
     if (userGuess === randomNumber) {
         messageElement.textContent = `Winner winner chicken dinner! The right answer was ${randomNumber}. You guessed it in ${attempts} attempts.`;
-        disableNumbers(); // Disable number buttons after a correct guess
-        resetButton.disabled = false; // Enable the reset button
+        disableNumbers(); 
+        resetButton.disabled = false; 
     } else if (userGuess < randomNumber) {
         messageElement.textContent = "Too low. Try again!";
     } else if (userGuess > randomNumber) {
@@ -31,6 +32,17 @@ function handleGuess(userGuess) {
     attempts++;
 }
 
+    /*logs remaining attempts*/
+    remainingAttempts--;
+
+    if (remainingAttempts === 0) {
+        disableNumbers(); /* takes away more guesses*/
+        messageElement.textContent = "You lose sucker!";
+        resetButton.disabled = false;
+    }
+}
+
+
 /*create numbers with html*/
 function createNumberButtons() {
     for (let i = 1; i <= 10; i++) {
@@ -39,9 +51,7 @@ function createNumberButtons() {
 
        /* classlist to style in css*/
 numberButton.classList.add("number-button");
-        
-        /* space button out with formula. Formula found on geeksforgeeks.com*/
-        const marginRight = `calc((100% - (${n} * ${buttonWidth}px)) / (${n - 1}))`;
+    
 
         /*Registers users guess*/
         numberButton.addEventListener("click", () => {
@@ -67,6 +77,7 @@ function resetGame() {
     attempts = 0;
     enableNumbers();
       resetButton.disabled = true; /*added a disabled condition for the reset button when the game is in play*/
+     remainingAttempts = 4; /*puts guesses back to 4*/
 }
 
 /* Enable function buttons*/
