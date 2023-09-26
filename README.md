@@ -67,7 +67,7 @@ While layout in regards to screen-size could be improved there seems to be any p
 add
 
 # Content/ Credits
-• Guidance on troubleshooting fixing “right answer on final guess” issue :[w3schools](https://www.w3schools.com/js/js_if_else.asp  and https://www.youtube.com/watch?v=wT-1T7Ws5qY)
+• Guidance on troubleshooting fixing “right answer on final guess” issue :[w3schools](https://www.w3schools.com/js/js_if_else.asp)  and [youtube](https://www.youtube.com/watch?v=wT-1T7Ws5qY)
 
 
 Idea for project/ further reading : [geeksforgeeks](https://www.geeksforgeeks.org/number-guessing-game-using-javascript/)
