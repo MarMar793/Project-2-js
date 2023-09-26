@@ -3,6 +3,14 @@ height:100%;
 background-image:url(numberimage.gif);
 
 }
+
+div{
+  background-color:black;
+  align-content:center;
+   border-radius: inherit;
+  border-color:white;
+}
+
 h1{
   color: blue
   border:box;
