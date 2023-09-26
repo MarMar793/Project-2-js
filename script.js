@@ -14,6 +14,9 @@ function generateRandomNumber() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
+/* added classlist so I can style the buttons in css*/
+numberButton.classList.add("number-button");
+
 /*added else if to display message depening on users guess*/
 function handleGuess(userGuess) {
     if (userGuess === randomNumber) {
