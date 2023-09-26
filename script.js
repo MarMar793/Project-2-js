@@ -1,3 +1,4 @@
+ /* jshint esversion: 6 */ 
 /*number of attempts*/
 let remainingAttempts = 4; 
 /*Log randomly chosen number (winning number)*/
