@@ -23,8 +23,8 @@ A message also appears when they lose/ win.It gives the user closure and it comm
 This allows for the user to start the game again. Like the number buttons -a colour change on hover allows them to better recognise the cursor is over the restart button.
 
 # Features Left to Implement
-• A leaderboard of the best number of guesses in a row could be added. 
-• A two player function where the first user to guess correctly wins the game.
+* A leaderboard of the best number of guesses in a row could be added. 
+*  A two player function where the first user to guess correctly wins the game.
 
 
 
@@ -40,19 +40,19 @@ No errors were found when passing through the official (Jigsaw) validator
 No errors were found when passing through the official Jshint validator
 
 ### The following metrics were returned:
-• Function with the largest signature takes 1 arguments, while the median is 0.
-• Largest function has 15 statements in it, while the median is 2.
-• The most complex function has a cyclomatic complexity value of 7 while the median is 1.
+* Function with the largest signature takes 1 arguments, while the median is 0.
+* Largest function has 15 statements in it, while the median is 2.
+* The most complex function has a cyclomatic complexity value of 7 while the median is 1.
 
 It also returned 20 warning which all stated the following: _(element ) is only available in ES6 (use 'esversion: 6')._
 On further inspection it seems that the fix for this is to add _/* jshint esversion: 6 */_ to the beginning of JS code to clarify which version of JS has been used.
 
 ## Lighthouse Report
-• The report returned the following:
-• Performance- 72
-• Accessibility-91
-• Best Practices-75
-• SEO-64
+* The report returned the following:
+* Performance- 72
+* Accessibility-91
+* Best Practices-75
+* SEO-64
   
 ### Feedback
 _Chrome extensions negatively affected this page's load performance. Try auditing the page in incognito mode or from a Chrome profile without extensions.
@@ -64,10 +64,15 @@ As I had developed this project primarily in code anywhere (and it was off of th
 While layout in regards to screen-size could be improved there seems to be any particular bugs that could hinder the user.
 
 # Deployment
-add
+1. In the GitHub repository I selected the main branch.
+2. From the source section drop-down menu, select the Main Branch
+3. I then pushed the code via the council with the branch specified as main.
+4. After this had been completed I selected GitHub pages and selected Deploy from a branch. I selected Main and Root. I then pressed save.
+
+* The live link can be found here - [github.com](https://github.com/MarMar793/Project-2-js.git)
 
 # Content/ Credits
-• Guidance on troubleshooting fixing “right answer on final guess” issue :[w3schools](https://www.w3schools.com/js/js_if_else.asp)  and [youtube](https://www.youtube.com/watch?v=wT-1T7Ws5qY)
+* Guidance on troubleshooting fixing “right answer on final guess” issue :[w3schools](https://www.w3schools.com/js/js_if_else.asp)  and [youtube](https://www.youtube.com/watch?v=wT-1T7Ws5qY)
 
 
 Idea for project/ further reading : [geeksforgeeks](https://www.geeksforgeeks.org/number-guessing-game-using-javascript/)
