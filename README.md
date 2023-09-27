@@ -24,9 +24,7 @@ This allows for the user to start the game again. Like the number buttons -a col
 
 # Features Left to Implement
 * A leaderboard of the best number of guesses in a row could be added. 
-*  A two player function where the first user to guess correctly wins the game.
-
-
+* A two player function where the first user to guess correctly wins the game.
 
 # Validator Testing
 
