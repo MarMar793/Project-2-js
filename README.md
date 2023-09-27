@@ -67,7 +67,8 @@ While layout in regards to screen-size could be improved there seems to be any p
 3. I then pushed the code via the council with the branch specified as main.
 4. After this had been completed I selected GitHub pages and selected Deploy from a branch. I selected Main and Root. I then pressed save.
 
-* The live link can be found here - [github.com](https://github.com/MarMar793/Project-2-js.git)
+* The live link can be found here - [github](https://marmar793.github.io/Project-2-js/)
+  
 
 # Content/ Credits
 * Guidance on troubleshooting fixing “right answer on final guess” issue :[w3schools](https://www.w3schools.com/js/js_if_else.asp)  and [youtube](https://www.youtube.com/watch?v=wT-1T7Ws5qY)
